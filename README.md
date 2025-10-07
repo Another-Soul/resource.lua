@@ -32,8 +32,8 @@ print(wood.amount .. wood.name .. "," .. gold.amount .. gold.name)  --> 30 Wood,
 ```
 
 # API
-`Resource.new(name, amount)`\
-Creates a new resource and registers it.
+`Resource.new(name, amount, maxAmount)`\
+Creates a new resource with an optional maxAmount hardcap and registers it.
 ___
 `*resname:add(value)`\
 Increases the resource’s amount.
