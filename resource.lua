@@ -64,7 +64,7 @@ function Resource:scale(scale)
     self.amount = self.amount * scale
 end
 
-function Resource:printAll()
+function Resource.printAll()
     local str = ""
     for _,res in pairs(Resource.instances) do
         str = str .. string.format("\nCurrent %s: %d / %s", res.name, res.amount, res.maxAmount)
