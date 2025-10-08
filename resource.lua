@@ -1,8 +1,12 @@
 local Resource = {}
 Resource.__index = Resource
 
+Resource.instances = {}
+
 function Resource.new(name, amount, maxAmount)
-    return setmetatable({name = name or "Resource", amount = math.min(amount, maxAmount or math.huge) or 0, maxAmount = maxAmount or math.huge}, Resource)
+    local self = setmetatable({name = name or "Resource", amount = math.min(amount, maxAmount or math.huge) or 0, maxAmount = maxAmount or math.huge}, Resource)
+    table.insert(Resource.instances, self)
+    return self
 end
 
 function Resource:add(value)
@@ -53,6 +57,19 @@ function Resource:getPercent()
     else
         return self.amount / self.maxAmount
     end
+end
+
+function Resource:scale(scale)
+    self.maxAmount = self.maxAmount * scale
+    self.amount = self.amount * scale
+end
+
+function Resource:printAll()
+    local str = ""
+    for _,res in pairs(Resource.instances) do
+        str = str .. string.format("\nCurrent %s: %d / %s", res.name, res.amount, res.maxAmount)
+    end
+    return str
 end
 
 return Resource
