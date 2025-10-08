@@ -61,10 +61,11 @@ Sets the amount of the resource.
 ___
 `*resname:getPercent()`\
 Outputs the percentage of resource relative to its maxAmount.
+___
 `*resname:scale(scale)`\
 Multiplies the amount and maximum amount by the `scale` factor.
 ___
-`Resource:printAll()`
+`Resource.printAll()`
 Prints all of the resource info in the format of `resource amount: resource amount / maximum amount` in a single string.
 \
 \
