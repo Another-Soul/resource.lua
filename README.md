@@ -9,7 +9,7 @@ It’s designed for games, simulations, or any project where you need to keep tr
 - Create, add, and spend resources
 - Can be extended with your own methods
 
-## Usage
+## 👤 Usage
 1. **Require the module:**
 ```lua
 local Resource = require "resource"
@@ -31,7 +31,7 @@ wood:transfer(gold, 10)
 print(wood.amount .. wood.name .. "," .. gold.amount .. gold.name)  --> 30 Wood, 50 Gold
 ```
 
-## API
+## 🔐 API
 `Resource.new(name, amount, maxAmount)`\
 Creates a new resource and registers it.
 ___
@@ -65,7 +65,7 @@ ___
 `*resname:scale(scale)`\
 Multiplies the amount and maximum amount by the `scale` factor.
 ___
-`Resource.printAll()`
+`Resource.printAll()`\
 Prints all of the resource info in the format of `resource amount: resource amount / maximum amount` in a single string.
 \
 \
