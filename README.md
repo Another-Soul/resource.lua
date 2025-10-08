@@ -33,7 +33,7 @@ print(wood.amount .. wood.name .. "," .. gold.amount .. gold.name)  --> 30 Wood,
 
 # API
 `Resource.new(name, amount, maxAmount)`\
-Creates a new resource with an optional maxAmount hardcap and registers it.
+Creates a new resource and registers it.
 ___
 `*resname:add(value)`\
 Increases the resource’s amount.
@@ -52,6 +52,15 @@ Outputs the resource info in the format of `resource amount: resource amount`.
 ___
 `*resname:equalize(to)`\
 Sets the amount of one resource to the one of another resource.
+___
+`*resname:setMax()`\
+Sets a new maximum amount of the resource.
+___
+`*resname:setAmount()`\
+Sets the amount of the resource.
+___
+`*resname:getPercent()`\
+Outputs the percentage of resource relative to its maxAmount.
 \
 \
 <sub>*Switch `resname` for the name of whatever resource you want to work with.</sub>
